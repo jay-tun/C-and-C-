@@ -114,19 +114,19 @@ The `Query` class manages operations on a datacube by sending queries through th
 
   #### Methods:
   
-     + **`add_coverage(coverage)`**: Adds a coverage to the datacube queries.
+   + **`add_coverage(coverage)`**: Adds a coverage to the datacube queries.
 
-     + **`set_return(return_type, return_value=None)`**: Sets the return type and value for the results of the queries.
+   + **`set_return(return_type, return_value=None)`**: Sets the return type and value for the results of the queries.
 
-     + **`set_operation(operation)`**: Sets the operation to perform on the data.
+   + **`set_operation(operation)`**: Sets the operation to perform on the data.
 
-     + **`set_count_condition(condition)`**: Sets the condition for count operations.
+   + **`set_count_condition(condition)`**: Sets the condition for count operations.
 
-     + **`set_switch(Switch)`**: Sets the switch statement for color coding operations.
+   + **`set_switch(Switch)`**: Sets the switch statement for color coding operations.
 
-     + **`generate_query(expression)`**: Generates the database query based on the set parameters.
+   + **`generate_query(expression)`**: Generates the database query based on the set parameters.
 
-     + **`execute_query(expression)`**: Executes the generated query using the `DatabaseConnection`. Return Types: **CSV**, **PNG**, **JPEG** are supported.
+   + **`execute_query(expression)`**: Executes the generated query using the `DatabaseConnection`. Return Types: **CSV**, **PNG**, **JPEG** are supported.
 
 
 
