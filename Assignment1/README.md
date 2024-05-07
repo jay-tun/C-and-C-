@@ -18,6 +18,8 @@ This class handles HTTP connections to a database server for sending queries. Me
   + `__init__(self, endpoint_url)`: Initializes the connection with the URL of the database endpoint.
   + `send_request(self, query)`: Sends a POST request to the database endpoint with the provided query. Returns the HTTP response returned by the server.
 
+
+
 ---
 
 
@@ -33,6 +35,11 @@ It represents a coverage in the datacube queries. It is responsible for managing
    + `Binary Operations:` Overloads arithmetic and comparison operators (`+`, `-`, `*`, `/`, `<`, `<=`, `>`, `>=`, `==`, `!=`) to perform binary operations between coverages and other objects. Each operator returns a `BinaryOperation` object with the respective operation and operands.
 
 
+
+---
+
+
+
 ### `Axis` Class
 
 Represents an axis used for defining subsets. It encapsulates the name and bounds of an axis, allowing for defining subsets within the datacube. The `Axis` class provides a convenient way to define and represent axes within a datacube, facilitating the specification of spatial or temporal subsets during data querying operations.
@@ -41,6 +48,10 @@ Represents an axis used for defining subsets. It encapsulates the name and bound
 
    + `__init__(self, name, lower_bound, upper_bound=None)`: Initializes an `Axis` object with the given name and lower bound. Optionally accepts an upper bound for the axis range. If not provided, defaults to `None`.
    + `__str__(self)`: Returns a string representation of the axis.If an upper bound is provided, it returns the axis name along with the range in the format: `{name}(lower_bound:upper_bound)`. If no upper bound is provided, it returns the axis name along with the lower bound only in the format: `{name}(lower_bound)`.
+
+
+
+---
 
 
 ### `BinaryOperation` Class
@@ -55,6 +66,9 @@ The `BinaryOperation` class represents a binary operation between two operands. 
    + **Comparison Operations**: These methods overload comparison operators (<, <=, >, >=, ==, !=) to perform respective comparison operations between operands.
 
 
+
+---
+
 ### `RGBColor` Class
 
 The `RGBColor` class represents a color in the RGB color space. It encapsulates the values for the red, green, and blue components of the color. It provides an effective way to query **On-the-fly coloring**. 
@@ -65,6 +79,12 @@ The `RGBColor` class represents a color in the RGB color space. It encapsulates 
 
    + **`__str__(self)`**: Returns a string representation of the RGB color in the format: `{red: <red_value>; green: <green_value>; blue: <blue_value>}`.
 
+
+
+---
+
+
+
 ### `Switch` and `Case` Classes 
 
 The `Switch` class represents a switch statement, which evaluates different cases based on conditions and returns corresponding RGB colors.
@@ -72,6 +92,7 @@ The `Switch` class represents a switch statement, which evaluates different case
 The `Case` class represents a case statement used within a switch statement. It associates an expression with a specific RGB color to be returned when the expression evaluates to true.
 
 These classes allow users to utilize `switch` and `case` when querying from datacube.
+
 
 
 ---
@@ -93,21 +114,25 @@ The `Query` class manages operations on a datacube by sending queries through th
 
   #### Methods:
 
-   1. **`add_coverage(coverage)`**: Adds a coverage to the datacube queries.
+    + **`add_coverage(coverage)`**: Adds a coverage to the datacube queries.
 
-   2. **`set_return(return_type, return_value=None)`**: Sets the return type and value for the results of the queries.
+    + **`set_return(return_type, return_value=None)`**: Sets the return type and value for the results of the queries.
 
-   3. **`set_operation(operation)`**: Sets the operation to perform on the data.
+    + **`set_operation(operation)`**: Sets the operation to perform on the data.
 
-   4. **`set_count_condition(condition)`**: Sets the condition for count operations.
+    + **`set_count_condition(condition)`**: Sets the condition for count operations.
 
-   5. **`set_switch(Switch)`**: Sets the switch statement for color coding operations.
+    + **`set_switch(Switch)`**: Sets the switch statement for color coding operations.
 
-   6. **`generate_query(expression)`**: Generates the database query based on the set parameters.
+    + **`generate_query(expression)`**: Generates the database query based on the set parameters.
 
-   7. **`execute_query(expression)`**: Executes the generated query using the `DatabaseConnection`. Return Types: **CSV**, **PNG**, **JPEG** are supported.
+    + **`execute_query(expression)`**: Executes the generated query using the `DatabaseConnection`. Return Types: **CSV**, **PNG**, **JPEG** are supported.
+
+
 
 ---
+
+
 
 ## Running the Code
 
@@ -124,3 +149,5 @@ When calling the main function:
 The result of the executed query is then printed.
 
 
+
+---
