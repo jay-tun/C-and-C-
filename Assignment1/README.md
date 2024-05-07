@@ -103,7 +103,7 @@ These classes allow users to utilize `switch` and `case` when querying from data
 The `Query` class manages operations on a datacube by sending queries through the `DatabaseConnection`. It provides methods to define query parameters, generate database queries, and execute them to retrieve data. It is the integral part of the whole `wdc` library and this implementation provides a flexible interface for such operations.
 
   #### Attributes:
-
+  
    - **`dbc`**: The `DatabaseConnection` object used for sending queries to the database server.
    - **`coverages`**: A list containing `Coverage` objects representing datasets or coverages to be queried.
    - **`return_type`**: The type of data to return from queries (e.g., CSV, PNG, JPEG).
@@ -113,20 +113,20 @@ The `Query` class manages operations on a datacube by sending queries through th
    - **`Switch`**: An instance of the `Switch` class used for color coding operations.
 
   #### Methods:
+  
+     + **`add_coverage(coverage)`**: Adds a coverage to the datacube queries.
 
-    + **`add_coverage(coverage)`**: Adds a coverage to the datacube queries.
+     + **`set_return(return_type, return_value=None)`**: Sets the return type and value for the results of the queries.
 
-    + **`set_return(return_type, return_value=None)`**: Sets the return type and value for the results of the queries.
+     + **`set_operation(operation)`**: Sets the operation to perform on the data.
 
-    + **`set_operation(operation)`**: Sets the operation to perform on the data.
+     + **`set_count_condition(condition)`**: Sets the condition for count operations.
 
-    + **`set_count_condition(condition)`**: Sets the condition for count operations.
+     + **`set_switch(Switch)`**: Sets the switch statement for color coding operations.
 
-    + **`set_switch(Switch)`**: Sets the switch statement for color coding operations.
+     + **`generate_query(expression)`**: Generates the database query based on the set parameters.
 
-    + **`generate_query(expression)`**: Generates the database query based on the set parameters.
-
-    + **`execute_query(expression)`**: Executes the generated query using the `DatabaseConnection`. Return Types: **CSV**, **PNG**, **JPEG** are supported.
+     + **`execute_query(expression)`**: Executes the generated query using the `DatabaseConnection`. Return Types: **CSV**, **PNG**, **JPEG** are supported.
 
 
 
